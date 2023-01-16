@@ -1,7 +1,7 @@
 import axios from "axios";
 import { parse, stringify } from 'qs'
 
-const baseUrl = "http://localhost:3000/api/v1/";
+const baseUrl = "/api/v1/";
 const getToken = () => localStorage.getItem("token");
 
 const axiosClient = axios.create({
