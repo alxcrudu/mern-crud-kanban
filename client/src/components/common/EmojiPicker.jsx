@@ -1,7 +1,7 @@
-import "emoji-mart/css/emoji-mart.css";
 import React, { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../../context/ThemeProvider";
-import { Picker } from "emoji-mart";
+import data from "@emoji-mart/data";
+import Picker from "@emoji-mart/react";
 
 const EmojiPicker = (props) => {
   const { theme } = useContext(ThemeContext);
@@ -36,7 +36,7 @@ const EmojiPicker = (props) => {
           zIndex: "10",
         }}
       >
-        <Picker theme={theme} onSelect={selectEmoji} showPreview={false} />
+        <Picker theme={theme} data={data} onEmojiSelect={selectEmoji} showPreview={false} />
       </div>
     </div>
   );

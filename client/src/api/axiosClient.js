@@ -1,12 +1,15 @@
 import axios from "axios";
-import queryString from "query-string";
+import { parse, stringify } from 'qs'
 
 const baseUrl = "http://localhost:8080/api/v1/";
 const getToken = () => localStorage.getItem("token");
 
 const axiosClient = axios.create({
   baseURL: baseUrl,
-  paramsSerializer: (params) => queryString.stringify({ params }),
+  paramsSerializer: {
+    encode: parse,
+    serialize: stringify,
+  },
 });
 
 axiosClient.interceptors.request.use(async (config) => {

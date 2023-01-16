@@ -39,6 +39,7 @@ const Login = () => {
       setLoading(false);
       localStorage.setItem("token", res.token);
       navigate("/");
+      return;
     } catch (err) {
       const errors = err.data.errors;
       errors.forEach((e) => {

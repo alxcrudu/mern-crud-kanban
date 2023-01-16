@@ -16,14 +16,15 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static("client"));
+const build = path.join(__dirname, "client", "build");
+app.use(express.static(build));
 
 // mongoDB
 dbConnect();
 
 // routes
 app.get("/", async (req, res) => {
-  res.sendFile("index.html");
+  res.sendFile(path.join(build, "index.html"));
 });
 app.use("/api/v1", require("./src/v1/routes"));
 
