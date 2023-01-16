@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+@layer base {
+  h1, h2, h3, p, span, div, a, button {
+    @apply text-text-primary dark:text-text-primary-dark;
+  }
+  body {
+    @apply bg-bg-board dark:bg-bg-board-dark;
+  }
+  .ui__textfield {
+    @apply text-text-primary dark:text-text-primary-dark;
+  }
+  .ui_modal {
+    @apply bg-primary-color;
+  }
+  .task-card {
+    @apply bg-bg dark:bg-bg-dark relative;
+  }
+}
+
+.sidebar {
+  width: 300px !important;
+  min-width: 300px !important;
+  border-right: solid 0.5px rgba(255, 255, 255, 0.15);
+}
+.new-column {
+  width: 300px;
+  min-width: 300px;
+}
+.top-bar {
+  border-bottom: solid 0.5px rgba(255, 255, 255, 0.15);
+}
+.divider {
+  background: rgba(255, 255, 255, 0.15);
+  width: 100%;
+  height: 0.5px;
+}
+.description div {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.ant-switch {
+  background-color: #635fc7 !important;
+}
+.tasks-container {
+  min-height: 50px;
+}
+.top-bar {
+  height: 150px;
+}
+.kanban-content {
+  height: calc(100vh - 150px);
+  overflow: scroll;
+}
